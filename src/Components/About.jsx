@@ -1,11 +1,16 @@
 import React from 'react'
 import Button from './Button'
+import Contact from './Contact'
 
 function About() {
   return (
-    <div>Me hu about
+    <>
+      <h1 className='text-3xl'><b>About</b></h1>
       <Button />
-    </div>
+      <div className=''>
+        <Contact />
+      </div>
+    </>
   )
 }
 

@@ -21,7 +21,7 @@ function Comming({title,description}) {
                 </div>
                 <Link
                 to={``}
-                className="absolute flex flex-col bottom-5 right-5 px-3 py-1 border-1 text-white text-xl pb-2 font-semibold bg-slate-700 border-black rounded-full shadow-md shadow-blue-600/50 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-800/70 transition-all duration-300"
+                className="absolute flex flex-col bottom-5 right-5 px-3 py-1 border-1 animate-bounce text-white text-xl pb-2 font-semibold bg-slate-700 border-black rounded-full shadow-md shadow-blue-600/50 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-800/70 transition-all duration-300"
                 >
                 Comming Soon...
                 </Link>

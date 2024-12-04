@@ -5,8 +5,7 @@ function Button() {
 const navigate = useNavigate()
 
   return (
-    <div>
-
+    <>
         <div className='fixed flex flex-wrap justify-center bottom-24 inset-x-0 px-2 py-2'>
             <div className="flex flex-wrap justify-center gap-3 shadow-lg px-5 py-2 rounded-full text-black bg-black shadow-blue-600/50 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-800/70 transition-all duration-300">
                 <div className='flex flex-col'>
@@ -45,8 +44,7 @@ const navigate = useNavigate()
                 </Link>
             </div>      
         </div>
-
-    </div>
+    </>
     )
 }
 

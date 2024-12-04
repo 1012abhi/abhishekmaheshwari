@@ -4,6 +4,7 @@ import axios from 'axios';
 import Card from './Card';
 import Comming from './Comming';
 import Button from './Button';
+import Contact from './Contact';
 
 function ProjectCard() {
   const [data, setData] = useState([]);
@@ -44,7 +45,7 @@ function ProjectCard() {
   return (
     <>  
         <div className='w-full '>
-              <p className=' text-4xl font-semibold mb-5 mt-0 pt-0 max-sm:text-3xl'>Live Project</p>
+              <p className=' text-4xl mb-5 mt-0 pt-0 max-sm:text-3xl'><b>Live Project</b></p>
             <div className='flex flex-wrap gap-6 justify-center '>
               <Card 
                 title={title.id1}
@@ -63,9 +64,11 @@ function ProjectCard() {
               />
             
             </div>
+            <div className=' '>
+        <Contact />
+      </div>
 
-
-            <p className=' text-4xl font-semibold mb-12 mt-14 pt-0 max-sm:text-3xl'>Github Projects Repo</p>
+            <p className=' text-4xl mb-12 mt-14 pt-0 max-sm:text-3xl'><b>Github Projects Repo</b></p>
           <div className="flex flex-wrap gap-6 justify-center">
             
             {data.map((repo) => (
@@ -97,6 +100,7 @@ function ProjectCard() {
             ))}
           </div>
         <Button />
+      
         </div>
     </>
   );
