@@ -44,8 +44,8 @@ function ProjectCard() {
   return (
     <>  
         <div className='w-full '>
-              <p className=' text-4xl font-semibold mb-5 mt-0 pt-0'>Live Project</p>
-            <div className='flex justify-center gap-8'>
+              <p className=' text-4xl font-semibold mb-5 mt-0 pt-0 max-sm:text-3xl'>Live Project</p>
+            <div className='flex flex-wrap gap-6 justify-center '>
               <Card 
                 title={title.id1}
                 live={live.live1}
@@ -65,19 +65,19 @@ function ProjectCard() {
             </div>
 
 
-            <p className=' text-4xl font-semibold mb-5 mt-4 pt-0'>Github Projects Repo</p>
+            <p className=' text-4xl font-semibold mb-12 mt-14 pt-0 max-sm:text-3xl'>Github Projects Repo</p>
           <div className="flex flex-wrap gap-6 justify-center">
             
             {data.map((repo) => (
               <div
                 key={repo.id}
                 className="relative w-[90%] max-w-[350px] h-[250px] rounded-3xl bg-white shadow-lg shadow-blue-500/50 md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[350px] transition-all hover:bg-gray-500 group"
-              >
+              > 
                 {/* <img 
                 className='w-[90%] max-w-[350px] h-[250px] rounded-3xl bg-white shadow-lg shadow-blue-500/50 md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[350px] transition-all'
                 src="1359.jpg" alt="" /> */}
                 <div className=" absolute p-6 top-0">
-                  <h2 className="text-xl font-bold text-blue-600 mb-2">{repo.name}</h2>
+                  <h2 className="text-xl font-bold text-blue-600 mb-2 items-center">{repo.name}</h2>
                   <p className="text-gray-700 mt-5 group-hover:text-white">{repo.description || 'No description available'}</p>
                 </div>
                 <Link
