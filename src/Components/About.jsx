@@ -1,8 +1,11 @@
 import React from 'react'
+import Button from './Button'
 
 function About() {
   return (
-    <div>Me hu About </div>
+    <div>Me hu about
+      <Button />
+    </div>
   )
 }
 

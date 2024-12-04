@@ -1,50 +1,9 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom'; // Correct import
-// import axios from 'axios';
-
-// function ProjectCard() {
-//   const [data, setData] = useState([]);
-
-//   // Fetch data inside useEffect to prevent infinite loop
-//   useEffect(() => {
-//     axios
-//       .get('https://api.github.com/users/1012abhi/repos')
-//       .then((response) => setData(response.data))
-//       .catch((err) => console.error(err));
-//   }, []); // Empty dependency array ensures it runs only once on mount
-
-//   return (
-//     <div className="flex flex-wrap gap-6 justify-center">
-//       {data.map((repo) => (
-//         <div
-//           key={repo.id}
-//           className="relative w-[90%] max-w-[350px] h-[250px] rounded-3xl bg-white shadow-lg shadow-blue-500/50 md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[350px] transition-all"
-//         >
-//           <div className="p-4">
-//             <h2 className="text-xl font-bold text-blue-600 mb-2">{repo.full_name}</h2>
-//             <p className="text-gray-700">{repo.description || 'No description available'}</p>
-//           </div>
-//           <Link
-//             to={`/repo/${repo.name}`}
-//             className="absolute flex flex-col bottom-5 right-5 px-4 py-2 bg-blue-600 text-white rounded-full font-semibold shadow-md shadow-blue-600/50 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-800/70 transition-all duration-300"
-//           >
-//             View
-//           </Link>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default ProjectCard;
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router'; // Correct import
 import axios from 'axios';
 import Card from './Card';
 import Comming from './Comming';
+import Button from './Button';
 
 function ProjectCard() {
   const [data, setData] = useState([]);
@@ -137,6 +96,7 @@ function ProjectCard() {
               </div>
             ))}
           </div>
+        <Button />
         </div>
     </>
   );
