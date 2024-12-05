@@ -5,7 +5,7 @@ function Contact() {
 return (
     <div>
         <div className="relative">
-            <div className="fixed flex flex-col right-5 bottom-24 space-y-4 p-4 rounded-lg">
+            <div className="fixed flex flex-col right-5 bottom-28 space-y-4 p-4 rounded-lg max-sm:right-3">
                 <Link
                 className="hover:underline text-[#5E5E5E]"
                 to="https://www.linkedin.com/in/1012abhi/"

@@ -20,13 +20,13 @@ function App() {
             </div>
 
             {/* Enlarged Text */}
-            <div className="text-center sm:text-left font-normal text-2xl sm:text-3xl md:text-4xl">
+            <div className="text-center sm:text-left font-normal text-[#656465] text-2xl sm:text-3xl md:text-4xl">
               <p>Hii!</p>
               <p>I'm <b>Abhishek Maheshwari</b></p>
               <br />
-              <p>MERN Stack Developer</p>
+              <p><span className='text-[#049C43]'>M</span><span className='text-[#656465]'>E</span><span className='text-[#37CEDE]'>R</span><span className='text-[#74C05A]'>N</span> Stack Developer</p>
               <Link 
-              className='underline mlmax-sm:mt-[2rem] max-sm-ml-[2rem] text-3xl max-sm:text-xl'
+              className='underline mlmax-sm:mt-[2rem] max-sm-ml-[2rem] text-[#656465] text-3xl max-sm:text-xl'
               to='https://drive.google.com/file/d/12Deg6sLJdHfxGsqLjyD1kZbIX0M_75Fg/view?usp=drivesdk'>Resume</Link>
             </div>
           </div>

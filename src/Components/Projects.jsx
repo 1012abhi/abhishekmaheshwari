@@ -45,7 +45,7 @@ function ProjectCard() {
   return (
     <>  
         <div className='w-full '>
-              <p className=' text-4xl mb-5 mt-0 pt-0 max-sm:text-3xl'><b>Live Project</b></p>
+              <p className=' text-4xl mb-5 mt-0 pt-0 max-sm:text-3xl text-[#656465]'><b>Live Project</b></p>
             <div className='flex flex-wrap gap-6 justify-center '>
               <Card 
                 title={title.id1}
@@ -68,7 +68,7 @@ function ProjectCard() {
         <Contact />
       </div>
 
-            <p className=' text-4xl mb-12 mt-14 pt-0 max-sm:text-3xl'><b>Github Projects Repo</b></p>
+            <p className=' text-4xl mb-12 mt-14 pt-0 max-sm:text-3xl text-[#656465]'><b>Github Projects Repo</b></p>
           <div className="flex flex-wrap gap-6 justify-center">
             
             {data.map((repo) => (
