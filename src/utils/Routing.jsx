@@ -16,7 +16,7 @@ function Routing() {
         </Routes> 
 
     
-  )
+    )
 }
 
 export default Routing
