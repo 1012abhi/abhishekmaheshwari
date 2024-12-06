@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import './App.css';
 import Button from './Components/Button';
 import Contact from './Components/Contact';
+import Skills from './Components/Skills'
 
 function App() {
   return (
@@ -33,11 +34,11 @@ function App() {
           
           <Button />
           <Contact />
+      {/* <Skills />   */}
 
           {/* fixed flex flex-wrap justify-center rounded-3xl w-fit h-fit mt-60 bg-zinc-950 py-3 text-white */}
         </div>
 
-      
     </>
   );
 }
