@@ -29,7 +29,7 @@ function About() {
        
         <Button />
       <div className=''>
-        <Contact />
+        {/* <Contact /> */}
       </div>
     </>
   )

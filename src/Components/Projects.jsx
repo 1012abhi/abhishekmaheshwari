@@ -65,7 +65,7 @@ function ProjectCard() {
             
             </div>
             <div className=' '>
-        <Contact />
+        {/* <Contact /> */}
       </div>
 
             <p className=' text-4xl mb-12 mt-14 pt-0 max-sm:text-3xl text-[#656465]'><b>Github Projects Repo</b></p>
