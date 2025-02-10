@@ -8,23 +8,26 @@ import Contact from './Contact';
 
 function ProjectCard() {
   const [data, setData] = useState([]);
-  console.log('data:', data);
   
   const title = {
     id1: 'Employee Management System',
     id2: 'lenis-scroller',
-    id3: 'resbuilder'
+    id3: 'Resume Builder',
+    id4: 'Uber Clone'
   }
 
   const live = {
     live1: 'https://employee-management-system-tau-seven.vercel.app/',
     live2: 'https://lenis-scroller-2z3aemijn-1012abhis-projects.vercel.app/',
-    live3: '',
+    live3: 'https://resbuilder-beta.vercel.app/login',
+    live4: '',
   }
   
   const Img = {
     img1: 'ems.png',
     img2: 'leniss.png',
+    img3: 'resume.png',
+    img4: 'uber1.png',
   }
   const description = {
     des3: 'A streamlined web application designed to help users create professional resumes effortlessly.'
@@ -58,10 +61,20 @@ function ProjectCard() {
                 live={live.live2}
                 Img={Img.img2}
                 />
-              <Comming 
+              <Card 
+                title={title.id3}
+                live={live.live3}
+                Img={Img.img3}
+                />
+              <Card 
+                title={title.id4}
+                live={live.live4}
+                Img={Img.img4}
+                />
+              {/* <Comming 
                 title={title.id3}
                 description={description.des3}
-              />
+              /> */}
             
             </div>
             <div className=' '>
@@ -79,7 +92,7 @@ function ProjectCard() {
                 {/* <img 
                 className='w-[90%] max-w-[350px] h-[250px] rounded-3xl bg-white shadow-lg shadow-blue-500/50 md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[350px] transition-all'
                 src="1359.jpg" alt="" /> */}
-                <div className=" absolute p-6 top-0">
+                <div className="absolute p-6 top-0 w-full">
                   <h2 className="text-xl font-bold text-blue-600 mb-2 items-center">{repo.name}</h2>
                   <p className="text-gray-700 mt-5 group-hover:text-white">{repo.description || 'No description available'}</p>
                 </div>

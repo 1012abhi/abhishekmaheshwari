@@ -21,8 +21,8 @@ function Skills() {
         {/* Second Row */}
         <div className="flex flex-wrap justify-center items-center gap-8 mb-10">
           <img className="h-14 sm:h-18 md:h-20" src="science.png" alt="Science Icon" />
-          <img className="h-14 sm:h-18 md:h-20 bg-zinc-300" src="icons8-express-js-48.png" alt="Express.js" />
-          <Link>
+          <img className="h-14 sm:h-18 md:h-20 bg-zinc-300" src="c-.png" alt="Express.js" />
+          {/* <Link>
             <svg
               className="h-14 sm:h-18 md:h-20"
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ function Skills() {
                 />
               </g>
             </svg>
-          </Link>
+          </Link> */}
           <img className="h-8 sm:h-10 md:h-12" src="MongoDB_SpringGreen.png" alt="MongoDB" />
         </div>
 
