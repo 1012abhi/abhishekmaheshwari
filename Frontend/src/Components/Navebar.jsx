@@ -2,7 +2,7 @@ import { Moon, Sun } from 'lucide-react'
 import { useTheme } from '../utils/ThemeContext';
 import Container from "./Container.jsx";
 import { Link } from "react-router";
-import Logo from "./logo.jsx";
+import Logo from "./Logo.jsx";
 
 const Navebar = ({ onProjectsClick, onSkillsClick, onAboutClick }) => {
 
