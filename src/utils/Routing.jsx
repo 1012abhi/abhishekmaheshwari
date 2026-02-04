@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import About from '../Components/About.jsx'
-import Home from '../Components/Home.jsx'
+// import Home from '../Components/Home.jsx'
 import Projects from '../Components/Projects.jsx'
 import App from '../App.jsx'
 import Skills from '../Components/Skills.jsx'

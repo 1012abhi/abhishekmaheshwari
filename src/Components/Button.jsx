@@ -12,7 +12,7 @@ function Button() {
             <div className="flex flex-col">
             <button
                 onClick={() => navigate("/")}
-                className="outline-none px-4 py-1 rounded-full text-white bg-black shadow-lg"
+                className="outline-none px-4 py-1 rounded-full text-white bg-black shadow-lg hover:scale-105 transition-transform duration-200"
             >
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ function Button() {
             </div>
             
             <Link
-            className="outline-none px-4 py-1 rounded-full text-white bg-black shadow-lg"
+            className="outline-none px-4 py-1 rounded-full text-white bg-black shadow-lg hover:scale-105 transition-transform duration-200"
             to="/about"
             >
             <svg
