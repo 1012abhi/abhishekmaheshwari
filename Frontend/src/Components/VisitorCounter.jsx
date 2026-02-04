@@ -15,8 +15,6 @@ const VisitorCounter = () => {
       if (!isReturningUser) {
         localStorage.setItem('has_visited', 'true');
         const res = await axios.post(`${apiBase}/visitors/track`);
-        console.log('res1', res);
-
         setCount(res.data.total);
       } else {
         // Just fetch the current total without incrementing
