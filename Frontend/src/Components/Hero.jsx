@@ -1,7 +1,7 @@
 import React from 'react'
 import { ExpressIcon, MongoDBIcon, NodeIcon, ReactIcon } from './svg'
 import { useNavigate } from 'react-router'
-import Logo from './logo'
+import Logo from './Logo.jsx'
 import Contact from './Contact';
 
 function Hero() {
