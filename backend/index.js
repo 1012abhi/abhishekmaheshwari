@@ -9,29 +9,50 @@ const fs = require('fs');
 connectDB();
 const app = express();
 
-const allowedOrigins = (process.env.CORS_ORIGINS || '')
-  .split(',')
-  .map((s) => s.trim())
-  .filter(Boolean);
+// const allowedOrigins = (process.env.CORS_ORIGINS || '')
+//   .split(',')
+//   .map((s) => s.trim())
+//   .filter(Boolean);
+
+// const corsOptions = {
+//   origin(origin, cb) {
+//     // Allow non-browser tools (curl/postman) with no Origin header
+//     if (!origin) return cb(null, true);
+
+//     // Allow any localhost port in dev (Vite can pick different ports)
+//     if (/^https?:\/\/localhost:\d+$/.test(origin)) return cb(null, true);
+
+//     // Allow configured origins for production/staging
+//     if (allowedOrigins.includes(origin)) return cb(null, true);
+
+//     return cb(new Error(`CORS blocked for origin: ${origin}`));
+//   },
+//   // credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+//   allowedHeaders: ['Content-Type', 'x-forwarded-for', 'Authorization'],
+// };
+
+// Allow both production and local development origins
+const allowedOrigins = [
+  'https://abhishekmaheshwari.vercel.app',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:3000'
+];
 
 const corsOptions = {
-  origin(origin, cb) {
-    // Allow non-browser tools (curl/postman) with no Origin header
-    if (!origin) return cb(null, true);
-
-    // Allow any localhost port in dev (Vite can pick different ports)
-    if (/^https?:\/\/localhost:\d+$/.test(origin)) return cb(null, true);
-
-    // Allow configured origins for production/staging
-    if (allowedOrigins.includes(origin)) return cb(null, true);
-
-    return cb(new Error(`CORS blocked for origin: ${origin}`));
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'x-forwarded-for', 'Authorization'],
 };
-
 app.use(cors(corsOptions));
 const PORT = 5000;  
 const dataFile = path.join(__dirname, 'visitors.json');

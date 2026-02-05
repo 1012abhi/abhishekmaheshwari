@@ -31,25 +31,25 @@ function Hero() {
 
             {/* MongoDB */}
             <span className="inline-flex items-center outline-dashed rounded-lg mx-2 px-2 -outline-offset-4">
-              <MongoDBIcon className="w-5 h-5" />
+              <MongoDBIcon className="w-4 h-4" />
               <span className="font-semibold text-[#4AA73C] px-1">MongoDB</span>
             </span>,
 
             {/* Express */}
             <span className="inline-flex items-center outline-dashed rounded-lg mx-2 px-2 -outline-offset-4">
-              <ExpressIcon className="w-4 h-4 mr-4 dark:bg-white" />
-              <span className="font-semibold px-1">Express.js</span>
+              <ExpressIcon className="w-4 h-4 dark:bg-white" />
+              <span className="font-semibold px-1 text-black">Express.js</span>
             </span>,
 
             {/* React */}
             <span className="inline-flex items-center outline-dashed rounded-lg mx-2 px-2 -outline-offset-4">
-              <ReactIcon className="w-5 h-5 mr-1" />
+              <ReactIcon className="w-4 h-4" />
               <span className="text-blue-400 font-semibold px-1">React</span>
             </span>,
 
             {/* Node */}
             <span className="inline-flex items-center outline-dashed rounded-lg ml-2 px-2 -outline-offset-4">
-              <NodeIcon />
+              <NodeIcon className="w-4 h-4" />
               <span className="text-green-700 font-semibold px-1">Node.js</span>
             </span>
 

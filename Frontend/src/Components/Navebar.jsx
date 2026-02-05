@@ -21,7 +21,7 @@ const Navebar = ({ onProjectsClick, onSkillsClick, onAboutClick }) => {
           </div>
           <button 
           onClick={toggleTheme}
-          className="p-2 rounded-full hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-600 transition-colors duration-200 bg-transparent backdrop-blur-md">
+          className="p-2 rounded-full hover:bg-neutral-200 dark:text-white dark:hover:bg-neutral-700 transition-colors duration-200 bg-transparent backdrop-blur-md">
             {theme === 'light' ? <Sun /> : <Moon />}
           </button>
         </div>
