@@ -1,11 +1,9 @@
 import React from 'react'
-import { ExpressIcon, MongoDBIcon, NodeIcon, ReactIcon } from './svg'
-import { useNavigate } from 'react-router'
+import { ExpressIcon, MongoDBIcon, NodeIcon, ReactIcon } from './Svg.jsx'
 import Logo from './Logo.jsx'
-import Contact from './Contact';
+import Contact from './Contact.jsx';
 
 function Hero() {
-  const navigate = useNavigate();
 
   return (
     <>
