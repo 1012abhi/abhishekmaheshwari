@@ -131,7 +131,7 @@ const ProjectsCards = () => {
 
   return (
     <div className="relative w-full mb-16 mt-24">
-      <h1 className="font-mono font-medium text-3xl text-center mb-12 pt-8 dark:text-slate-400">Projects</h1>
+      <h1 className="font-mono font-medium text-2xl md:text-3xl text-center mb-12 pt-8 dark:text-slate-400">Projects</h1>
       <h3 className="text-center text-gray-500 dark:text-gray-400 mb-8">Click on a project to see more details</h3>
 
       <div className="w-full flex flex-col items-start gap-4 sm:ml-28 mt-8 px-4">

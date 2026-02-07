@@ -36,7 +36,7 @@ const SkillsScroll = () => {
 
   return (
     <div className="w-full px-4">
-      <h2 className="text-3xl font-mono font-medium text-center text-black dark:text-slate-400 mb-8">
+      <h2 className=" text-2xl md:text-3xl font-mono font-medium text-center text-black dark:text-slate-400 mb-8">
         Skills & Technologies
       </h2>
 

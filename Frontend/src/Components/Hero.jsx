@@ -12,7 +12,7 @@ function Hero() {
 
         {/* LOGO */}
         <div className="rounded-lg p-4 border-neutral-200 dark:border-gray-700 shadow-lg shadow-blue-600/10">
-          <Logo className="size-28 md:size-40 rounded-full bg-slate-600 hover:scale-105 transition duration-700 shadow-lg" />
+          <Logo className="size-28 md:size-40 rounded-full hover:scale-105 transition duration-700 shadow-lg" />
         </div>
 
         {/* TEXT CONTENT */}

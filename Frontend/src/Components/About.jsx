@@ -3,7 +3,7 @@ function About() {
     <>
 
       <div>
-        <h1 className='font-mono font-medium text-3xl text-center pt-8 dark:text-slate-400 mt-16'>About Me</h1>
+        <h1 className='font-mono font-medium text-2xl md:text-3xl text-center pt-8 dark:text-slate-400 mt-16'>About Me</h1>
         <div className="flex justify-center items-center mt-16 gap-x-12 gap-y-12 sm:gap-x-20 sm:mt-24 md:gap-x-28 md:mt-16">
           {/* Enlarged Image */}
           <div className="flex gap-8 md:flex-row flex-col justify-center items-start p-4">
