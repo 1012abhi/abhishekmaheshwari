@@ -5,6 +5,8 @@ const Visitor = require("../models/visitor.model.js");
 router.get('/count', async (req, res) => {
   try {
     const visitorData = await Visitor.findOne();
+    // console.log('count routes',visitorData);
+    
     res.json({ total: visitorData?.count ?? 0 });
   } catch (err) {
     res.status(500).json({ error: "Server error" });
@@ -32,40 +34,45 @@ router.post('/track', async (req, res) => {
   }
 });
 
-module.exports = router;
-
-
-
-// router.get("/visit", async (req, res) => {
-//   try {
-//     const ip =
-//       req.headers["x-forwarded-for"] ||
-//       req.socket.remoteAddress;
-
-//     const browser = req.headers["user-agent"];
-
-//     const today = new Date().toISOString().slice(0, 10);
-
-//     const alreadyVisited = await Visitor.findOne({
-//       ipAddress: ip,
-//       date: today
-//     });
-
-//     if (!alreadyVisited) {
-//       await Visitor.create({
-//         ipAddress: ip,
-//         browser,
-//         date: today
-//       });
-//     }
-
-//     const totalVisitors = await Visitor.countDocuments();
-
-//     res.json({ totalVisitors });
-
-//   } catch (err) {
-//     res.status(500).json({ message: "Visitor error" });
-//   }
-// });
-
 // module.exports = router;
+
+
+router.get("/visit", async (req, res) => {
+  try {
+    // Normalize IP (MOST IMPORTANT)
+    let ip =
+      req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.socket.remoteAddress;
+
+    ip = ip.replace("::ffff:", ""); // normalize
+
+    let visitor = await Visitor.findOne();
+
+    // first time ever
+    if (!visitor) {
+      visitor = await Visitor.create({
+        count: 1,
+        uniqueIps: [ip]
+      });
+
+      return res.json({ totalVisitors: visitor.count });
+    }
+
+    // already visited IP
+    if (visitor.uniqueIps.includes(ip)) {
+      return res.json({ totalVisitors: visitor.count });
+    }
+
+    // new unique IP
+    visitor.uniqueIps.push(ip);
+    visitor.count += 1;
+    await visitor.save();
+
+    res.json({ totalVisitors: visitor.count });
+
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+module.exports = router;

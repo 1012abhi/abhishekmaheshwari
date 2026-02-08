@@ -6,34 +6,40 @@ const VisitorCounter = () => {
   const [count, setCount] = useState(0);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const trackUser = async () => {
-      try {
-        const apiBase = import.meta.env.VITE_API_URL;
-        
-        if (!apiBase) {
-          // console.error('VITE_API_URL is not defined. Check your .env file.');
+  // useEffect(async () => {
+    // }, []);
+    
+    useEffect(() => {
+      const trackUser = async () => {
+        try {
+          const apiBase = import.meta.env.VITE_API_URL;
+          
+          if (!apiBase) {
+            // console.error('VITE_API_URL is not defined. Check your .env file.');
           setError('API configuration missing');
           return;
         }
-
+          const visitor = await axios.get(`${apiBase}/visitors/visit`)
+          console.log('visitor of visit api',visitor.data);
+          setCount(visitor.data.totalVisitors);
+        
         // console.log('API Base URL:', apiBase);
-        const isReturningUser = localStorage.getItem('has_visited');
+        // const isReturningUser = localStorage.getItem('has_visited');
 
-        // If no storage key exists, it's a new visitor for this browser
-        if (!isReturningUser) {
-          localStorage.setItem('has_visited', 'true');
-          console.log('Tracking new visitor...');
-          const res = await axios.post(`${apiBase}/visitors/track`);
-          console.log('Track response:', res.data);
-          setCount(res.data.total);
-        } else {
-          // Just fetch the current total without incrementing
-          console.log('Fetching count for returning visitor...');
-          const res = await axios.get(`${apiBase}/visitors/count`);
-          console.log('Count response:', res.data);
-          setCount(res.data.total);
-        }
+        // // If no storage key exists, it's a new visitor for this browser
+        // if (!isReturningUser) {
+        //   localStorage.setItem('has_visited', 'true');
+        //   console.log('Tracking new visitor...');
+        //   const res = await axios.post(`${apiBase}/visitors/track`);
+        //   console.log('Track response:', res.data);
+        //   setCount(res.data.total);
+        // } else {
+        //   // Just fetch the current total without incrementing
+        //   console.log('Fetching count for returning visitor...');
+        //   const res = await axios.get(`${apiBase}/visitors/count`);
+        //   console.log('Count response:', res.data);
+        //   setCount(res.data.total);
+        // }
       } catch (err) {
         // console.error('Error tracking visitor:', err);
         // console.error('Error details:', err.response?.data || err.message);

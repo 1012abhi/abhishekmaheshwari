@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 
+// const VisitorSchema = new mongoose.Schema({
+//   count: { type: Number, default: 0 },
+//   uniqueIps: [String] // Stores IPs to ensure 1 visitor = 1 desktop/network
+// });
+
 const VisitorSchema = new mongoose.Schema({
   count: { type: Number, default: 0 },
-  uniqueIps: [String] // Stores IPs to ensure 1 visitor = 1 desktop/network
+  uniqueIps: { type: [String], default: [] }
 });
 
 module.exports = mongoose.model('Visitor', VisitorSchema);
