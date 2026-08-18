@@ -8,6 +8,7 @@ const SkillsScroll = () => {
     { name: "JavaScript", icon: "JavaScript.png" },
     { name: "TypeScript", icon: "TypeScript.png" },
     { name: "React", icon: "react.png" },
+    { name: "Next.js", icon: "Nextjs.png" },
     { name: "Node.js", icon: "Node.js.png" },
     { name: "Express.js", icon: "Express.png" },
     { name: "NPM", icon: "NPM.png" },
