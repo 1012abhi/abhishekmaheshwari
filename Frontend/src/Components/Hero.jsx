@@ -65,7 +65,7 @@ function Hero() {
         <button
           onClick={() =>
             window.open(
-              'https://drive.google.com/file/d/1WxbYTA2AEC_ZAwdOzV-NYIH8whbIr-lo/view?usp=drivesdk',
+              'https://drive.google.com/file/d/1snfhIDVNnq2LX8H-T7Sh0UY0GOjB52Ky/view?usp=drive_link',
               '_blank'
             )
           }
