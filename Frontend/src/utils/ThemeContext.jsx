@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const ThemeContext = createContext();
 
@@ -6,30 +12,44 @@ export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved || 'system';
+    return localStorage.getItem("theme") || "system";
   });
 
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else if (theme === 'system') {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      root.classList.toggle('dark', isDark);
-    } else {
-      root.classList.remove('dark');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+useEffect(() => {
+  const root = document.documentElement;
+  const mediaQuery = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  );
 
-  const toggleTheme = () => {
-    setTheme(prev => {
-      if (prev === 'light') return 'dark';
-      if (prev === 'dark') return 'system';
-      return 'light';
-    });
+  const applyTheme = () => {
+    const isDark =
+      theme === "dark" ||
+      (theme === "system" && mediaQuery.matches);
+
+    root.classList.toggle("dark", isDark);
   };
+
+  applyTheme();
+  localStorage.setItem("theme", theme);
+
+  if (theme === "system") {
+    mediaQuery.addEventListener("change", applyTheme);
+
+    return () => {
+      mediaQuery.removeEventListener("change", applyTheme);
+    };
+  }
+}, [theme]);
+const toggleTheme = () => {
+  setTheme((prev) => {
+    const currentIsDark =
+      prev === "dark" ||
+      (prev === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    return currentIsDark ? "light" : "dark";
+  });
+};
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
